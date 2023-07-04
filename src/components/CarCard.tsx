@@ -51,7 +51,7 @@ const CarCard = ({car}: CarCardProps) => {
                 </div>
             </div>
             <div className='hidden group-hover:flex absolute bottom-0 w-full z-10'>
-                <CustomButton title="View more" containerStyles="w-full py-[16px] rounded-full bg-primary-blue " rightIcon="/right-arrow.svg" handleClick={() => setIsOpen(true)} textStyles='text-white text-[14px] leading-[17px] font-bold'  />
+                <CustomButton title="View more" containerStyles="w-full py-[16px] rounded-full bg-primary-blue" handleClick={() => setIsOpen(true)} textStyles='text-white text-[14px] leading-[17px] font-bold'  />
             </div>
         </div>
         <CarDetails isOpen={isOpen} closeModal={()=>setIsOpen(false)} car={car} />
