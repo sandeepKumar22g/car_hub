@@ -10,7 +10,7 @@ export default async function Home({searchParams}:{searchParams: any}) {
     limit: searchParams.limit || 12,
     model: searchParams.model || ""
   })
-  console.log(allCars)
+
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars
   return (
     <main className="overflow-hidden">
