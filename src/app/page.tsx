@@ -1,4 +1,4 @@
-import {CarCard, CustomFilter, Hero, SearchBar} from '@/components'
+import {CarCard, CustomFilter, Hero, SearchBar, ShowMore} from '@/components'
 import { fuels, yearsOfProduction } from '@/constants'
 import { fetchCars } from '@/utils'
 
@@ -7,7 +7,7 @@ export default async function Home({searchParams}:{searchParams: any}) {
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
+    limit: searchParams.limit || 12,
     model: searchParams.model || ""
   })
   console.log(allCars)
@@ -35,14 +35,19 @@ export default async function Home({searchParams}:{searchParams: any}) {
                   allCars?.map(car => (<CarCard car={car} />))
                 }
               </div>
+              <ShowMore
+              pageNumber={(searchParams.limit || 12) / 12}
+              isNext={(searchParams.limit || 12) > allCars.length}
+            />
             </section>
           ): (
             <div className='mt-16 flex justify-center items-center flex-col gap-2'>
-              <h2 className='text-black text-xl font-bold'>No results</h2>
+              <h2 className='text-black text-xl font-bold'>Oops, No results</h2>
               <p>{allCars?.message}</p>
             </div>
           )
         }
+
       </div>
     </main>
   )
