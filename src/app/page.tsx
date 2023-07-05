@@ -20,7 +20,7 @@ export default async function Home({searchParams}:{searchParams: any}) {
           <h1 className='text-4xl font-bold '>Car Catalouge</h1>
           <p>Explore the cars yi might like</p>
         </div>
-        <div className='mt-12 w-full flex-between items-center flex-wrap gap-5'>
+        <div className='mt-12 w-full flex justify-between items-center flex-wrap gap-5'>
           <SearchBar />
           <div className='flex justify-start flex-wrap items-center gap-2'>
             <CustomFilter title="fuel" options={fuels} />
